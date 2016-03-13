@@ -85,9 +85,12 @@
     <ClInclude Include="IGameItem.h" />
     <ClInclude Include="IPlayerStrategy.h" />
     <ClInclude Include="IRemoteControl.h" />
+    <ClInclude Include="IViewGameItem.h" />
     <ClInclude Include="MoveCommand.h" />
     <ClInclude Include="RotateCommand.h" />
     <ClInclude Include="Unboxing.h" />
+    <ClInclude Include="ViewBullet.h" />
+    <ClInclude Include="ViewPanzer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
@@ -95,6 +98,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MoveCommand.cpp" />
     <ClCompile Include="RotateCommand.cpp" />
+    <ClCompile Include="ViewBullet.cpp" />
+    <ClCompile Include="ViewPanzer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

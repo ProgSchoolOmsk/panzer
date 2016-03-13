@@ -1,41 +1,117 @@
 #include <iostream>
 #include <vector>
 
+#include <windows.h>
+
 #include "Boxing.h"
 #include "GameItem.h"
+
 #include "MoveCommand.h"
+#include "RotateCommand.h"
 #include "Unboxing.h"
+#include "ViewBullet.h"
+#include "ViewPanzer.h"
+
 
 using namespace std;
 
 
 int main(void)
 {
+	
 	IGameItem *item = new GameItem();
-	vector<double> point;
-	point.push_back(1);
-	point.push_back(-3);
+	vector<double> point(2);
+	point[0] = 1;
+	point[1] = 5;
 
 	item->setValue(
 		"coordinate", 
 		Boxing<vector<double> >(point)
 	);
 
-	vector<double> speed;
-	speed.push_back(0);
-	speed.push_back(1);
-	ICommand *command = new MoveCommand(item, speed);
+	IGameItem *item1 = new GameItem();
+	vector<double> point1(2);
+	point1[0] = 1;
+	point1[1] = 1;
 
-	command->Do();
-	command->Do();
-	command->Do();
-
-	vector<double> newPoint = Unboxing<vector<double> >(
-		item->getValue("coordinate")
+	item1->setValue(
+		"coordinate", 
+		Boxing<vector<double> >(point1)
 	);
 
-	cout << " x = " << newPoint[0] 
-	     << " y = " << newPoint[1];
+	item1->setValue(
+		"spriteNumber", 
+		Boxing<int >(0)
+	);
 
+	item1->setValue(
+		"spriteNumbers", 
+		Boxing<int >(8)
+	);
+
+	ViewPanzer panzer(item1);
+
+	IViewGameItem *viewItem = &panzer;
+
+	vector<double> speed;
+	speed.push_back(1);
+	speed.push_back(0);
+	
+	ICommand *command;
+	
+	system("cls");
+
+	command = new MoveCommand(item1, speed);
+	command -> Do();
+	viewItem ->Paint();
+
+	system("cls");
+
+	command = new RotateCommand(item1, 1);
+	command -> Do();
+	viewItem ->Paint();
+
+	system("cls");
+	
+	speed[0] = 1;
+	speed[1] = 1;
+
+	command = new MoveCommand(item1, speed);
+	command -> Do();
+	viewItem ->Paint();
+
+	system("cls");
+	
+	speed[0] = 1;
+	speed[1] = 1;
+
+	command = new MoveCommand(item1, speed);
+	command -> Do();
+	viewItem ->Paint();
+
+	system("cls");
+
+	command = new RotateCommand(item1, -1);
+	command -> Do();
+	viewItem ->Paint();
+
+	system("cls");
+	
+	speed[0] = 1;
+	speed[1] = 0;
+
+	command = new MoveCommand(item1, speed);
+	command -> Do();
+	viewItem ->Paint();
+
+	system("cls");
+	
+	speed[0] = 1;
+	speed[1] = 0;
+
+	command = new MoveCommand(item1, speed);
+	command -> Do();
+	viewItem ->Paint();
+	
 	return 0;
 }
