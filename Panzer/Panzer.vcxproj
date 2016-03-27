@@ -93,6 +93,8 @@
     <ClInclude Include="ViewPanzer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CommandManager.cpp" />
+    <ClCompile Include="FirstStrategy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameItem.cpp" />
     <ClCompile Include="main.cpp" />

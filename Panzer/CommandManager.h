@@ -7,10 +7,22 @@
 
 class CommandManager: public ICommandInvoker, public IRemoteControl
 {
+	ICommand *command;
+	string playerName;
 public:
+	CommandManager(string const& _playerName)
+		: playerName(_playerName)
+	{
+	}
 	bool IsMine(
 		IPlayerStrategy const& strategy
-		) const {return false;}
+		) const 
+	{
+		return playerName == strategy.name();		
+	}
+    
+	virtual void send(ICommand* command);
+	virtual ICommand* Invoke();
 };
 
 #endif

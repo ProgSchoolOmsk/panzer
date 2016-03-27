@@ -19,7 +19,7 @@ public:
 
 	void Play();
 private:
-	bool CanFinish() const;
+	bool CantFinish() const;
 	vector<IRemoteControl*> chooseRemoteControls(
 		vector<CommandManager*> & managers,
 		IPlayerStrategy const& strategy

@@ -22,6 +22,6 @@ void FirstStrategy::step(
 		speed[1] = 1;
 
 		ICommand *command = new MoveCommand(items[0], speed); 
-		controls[0]->send(*command);
+		controls[0]->send(command);
 	}
 }

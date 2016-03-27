@@ -6,7 +6,7 @@
 class IRemoteControl
 {
 public:
-	virtual void send(ICommand const& command) = 0;
+	virtual void send(ICommand* command) = 0;
 };
 
 #endif

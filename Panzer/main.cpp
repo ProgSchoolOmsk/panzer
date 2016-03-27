@@ -4,8 +4,9 @@
 #include <windows.h>
 
 #include "Boxing.h"
+#include "Game.h"
 #include "GameItem.h"
-
+#include "FirstStrategy.h"
 #include "MoveCommand.h"
 #include "RotateCommand.h"
 #include "Unboxing.h"
@@ -18,8 +19,14 @@ using namespace std;
 
 int main(void)
 {
+	vector<IPlayerStrategy*> strategies;
+	strategies.push_back(new FirstStrategy());
+
+	Game game(strategies);
+
+	game.Play();
 	
-	IGameItem *item = new GameItem();
+	/*IGameItem *item = new GameItem();
 	vector<double> point(2);
 	point[0] = 1;
 	point[1] = 5;
@@ -112,6 +119,7 @@ int main(void)
 	command = new MoveCommand(item1, speed);
 	command -> Do();
 	viewItem ->Paint();
+	*/
 	
 	return 0;
 }
