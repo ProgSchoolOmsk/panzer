@@ -76,7 +76,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BoundsRule.h" />
     <ClInclude Include="Boxing.h" />
+    <ClInclude Include="IGameRule.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="CommandManager.h" />
     <ClInclude Include="Game.h" />

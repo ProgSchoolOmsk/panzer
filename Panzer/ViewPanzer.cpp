@@ -18,46 +18,46 @@ void ViewPanzer::Paint() const
 			item->getValue("coordinate")
 		);
 
-	char sprite[][3][3] = {
+	char sprite[][9] = {
 		{
-			{'X', 'X', 'X'},
-			{'#', '1', '-'},
-			{'X', 'X', 'X'}
+			 'X', 'X', 'X', 
+			 '#', '1', '-',
+			 'X', 'X', 'X'
 		},
 		{
-			{'#', 'X', ' '},
-			{'X', '1', 'X'},
-			{' ', 'X', '\\'}
+			 '#', 'X', ' ',
+			 'X', '1', 'X',
+			 ' ', 'X', '\\'
 		},
 		{
-			{'X', '#', 'X'},
-			{'X', '1', 'X'},
-			{'X', '|', 'X'}
+			 'X', '#', 'X',
+			 'X', '1', 'X',
+			 'X', '|', 'X'
 		},
 		{
-			{' ', 'X', '#'},
-			{'X', '1', 'X'},
-			{'/', 'X', ' '}
+			 ' ', 'X', '#' ,
+			 'X', '1', 'X' ,
+			 '/', 'X', ' ' 
 		},
 		{
-			{'X', 'X', 'X'},
-			{'-', '1', '#'},
-			{'X', 'X', 'X'}
+			 'X', 'X', 'X',
+			 '-', '1', '#',
+			 'X', 'X', 'X' 
 		},
 		{
-			{'\\', 'X', ' '},
-			{'X', '1', 'X'},
-			{' ', 'X', '#'}
+			 '\\', 'X', ' ',
+			 'X', '1', 'X',
+			 ' ', 'X', '#'
 		},
 		{
-			{'X', '|', 'X'},
-			{'X', '1', 'X'},
-			{'X', '#', 'X'}
+			 'X', '|', 'X' ,
+			 'X', '1', 'X' ,
+			 'X', '#', 'X' 
 		},
 		{
-			{' ', 'X', '/'},
-			{'X', '1', 'X'},
-			{'#', 'X', ' '}
+			 ' ', 'X', '/',
+			 'X', '1', 'X',
+			 '#', 'X', ' ' 
 		}
 	};
 
@@ -66,19 +66,26 @@ void ViewPanzer::Paint() const
 			item->getValue("spriteNumber")
 		);
 
-	PaintSprite(coordinate[0]-1, coordinate[1]-1, sprite[spriteNumber]);
+	int arraySize = 625;//sizeof(sprite[spriteNumber]);
+	int charSize = sizeof(char);
+	int arrayLength = arraySize / charSize;
+
+	double size = sqrt(arrayLength);
+	int s = (int) size;
+
+	PaintSprite((int)coordinate[0], (int)coordinate[1], sprite[spriteNumber], (int)sqrt(sizeof(sprite[spriteNumber])/sizeof(char)));
 	
 }
  
-void ViewPanzer::PaintSprite(int x, int y, char sprite[3][3]) const
+void ViewPanzer::PaintSprite(int x, int y, char* sprite, int spriteSize) const
 {
-	for(int i=0; i< 3; ++i)
+	for(int i=0; i< spriteSize; ++i)
 	{
-		COORD p = { x, y + i };
+		COORD p = { x - spriteSize/2, y -spriteSize/2 + i };
         SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), p );
-		for(int j=0; j<3; ++j)
+		for(int j=0; j<spriteSize; ++j)
 		{
-			printf("%c", sprite[i][j]);
+			printf("%c", sprite[i*spriteSize + j]);
 		}
 	}
 }

@@ -11,7 +11,7 @@ public:
 	ViewPanzer(IGameItem *item);
 	virtual void Paint() const;
 private:
-	void PaintSprite(int x, int y, char sprite[3][3]) const;
+	void PaintSprite(int x, int y, char* sprite, int spriteSize) const;
 };
 
 #endif

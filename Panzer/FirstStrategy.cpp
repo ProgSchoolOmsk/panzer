@@ -18,8 +18,8 @@ void FirstStrategy::step(
 	if(i < 10)
 	{
 		std::vector<double> speed(2);
-		speed[0] = 1;
-		speed[1] = 1;
+		speed[0] = -1;
+		speed[1] = -1;
 
 		ICommand *command = new MoveCommand(items[0], speed); 
 		controls[0]->send(command);

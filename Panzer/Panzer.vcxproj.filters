@@ -60,6 +60,12 @@
     <ClInclude Include="ViewPanzer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IGameRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundsRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
