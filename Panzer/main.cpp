@@ -9,6 +9,9 @@
 #include "FirstStrategy.h"
 #include "MoveCommand.h"
 #include "RotateCommand.h"
+
+#include "Sqrt.h"
+
 #include "Unboxing.h"
 #include "ViewBullet.h"
 #include "ViewPanzer.h"
@@ -24,8 +27,12 @@ int main(void)
 
 	Game game(strategies);
 
+	
+
 	game.Play();
 	
+
+
 	/*IGameItem *item = new GameItem();
 	vector<double> point(2);
 	point[0] = 1;

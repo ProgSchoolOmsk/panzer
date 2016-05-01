@@ -78,6 +78,7 @@
   <ItemGroup>
     <ClInclude Include="BoundsRule.h" />
     <ClInclude Include="Boxing.h" />
+    <ClInclude Include="FirstStrategy.h" />
     <ClInclude Include="IGameRule.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="CommandManager.h" />
@@ -90,6 +91,7 @@
     <ClInclude Include="IViewGameItem.h" />
     <ClInclude Include="MoveCommand.h" />
     <ClInclude Include="RotateCommand.h" />
+    <ClInclude Include="Sqrt.h" />
     <ClInclude Include="Unboxing.h" />
     <ClInclude Include="ViewBullet.h" />
     <ClInclude Include="ViewPanzer.h" />
@@ -102,6 +104,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MoveCommand.cpp" />
     <ClCompile Include="RotateCommand.cpp" />
+    <ClCompile Include="Sqrt.cpp" />
     <ClCompile Include="ViewBullet.cpp" />
     <ClCompile Include="ViewPanzer.cpp" />
   </ItemGroup>

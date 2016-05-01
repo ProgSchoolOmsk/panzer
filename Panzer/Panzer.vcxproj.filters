@@ -66,6 +66,12 @@
     <ClInclude Include="BoundsRule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FirstStrategy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sqrt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -93,6 +99,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CommandManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sqrt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
